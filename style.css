@@ -1,0 +1,670 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan',sans-serif;
+}
+
+
+
+h1{
+    font-size: 44px;
+    line-height: 64px;
+    color: #c01414;
+}
+
+h2{
+    font-size: 46px;
+    line-height: 64px;
+    color: #c01414;
+}
+
+h4{
+    font-size: 50px;
+    color: #c01414;
+}
+
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p{
+    font-size: 18px;
+    color: #e02c22;
+}
+
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+button.normal {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+
+button.white {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: #b83535;
+    background-color:transparent;
+    cursor: pointer;
+    border: 1px solid;
+    outline: none;
+    transition: 0.2s;
+}
+
+body {
+    width: 100%;
+    
+}
+
+/* Header */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background:none;
+    box-shadow: 0 5px 15px rgb(250, 246, 246);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    background: #088178;
+    height: 2px;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#hero {
+    background-image: url("img1/bgxanh.jpg");
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Hiệu ứng di chuyển từ trái sang phải */
+@keyframes slideInAndPulse {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%); /* Xuất phát từ bên trái */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Dừng tại vị trí ban đầu */
+    }
+}
+
+/* Hiệu ứng phóng to và thu nhỏ nhẹ */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Kích thước bình thường */
+    }
+    50% {
+        transform: scale(1.05); /* Phóng to nhẹ */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Áp dụng cho tất cả các chữ trong #hero */
+#hero * {
+    opacity: 0; /* Ban đầu ẩn chữ */
+    animation: slideInAndPulse 1s ease-in-out forwards, pulse 2s ease-in-out infinite; /* Kết hợp 2 hiệu ứng */
+}
+
+/* Độ trễ để các phần xuất hiện tuần tự */
+#hero h4 {
+    animation-delay: 0.3s, 1s; /* Di chuyển bắt đầu sau 0.3s, hiệu ứng "thở" bắt đầu sau 1s */
+}
+#hero h2 {
+    animation-delay: 0.6s, 1.3s;
+}
+#hero h1 {
+    animation-delay: 0.9s, 1.6s;
+}
+#hero p {
+    animation-delay: 1.2s, 1.9s;
+}
+#hero button {
+    animation-delay: 1.5s, 2.2s;
+}
+
+
+
+#hero h4 {
+    padding-bottom: 25px;
+    color: #c01414;
+}
+
+#hero h2 {
+    padding-bottom: 10px;
+    color: #0f9208;
+}
+
+#hero h1 {
+    padding-bottom: 10px;
+    color: #c01414;
+}
+
+#hero p {
+    padding-bottom: 10px;
+    color: #0f9208;
+}
+
+#hero button {
+    background-image: url("img/button.png");
+    background-color: transparent;
+    color: #c01414;
+    padding: 14px 80px 14px 65px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 17px;
+    border: 0;
+}
+
+/* Feature Tính năng */
+#feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#feature .fe-box {
+    width: 150px;
+    text-align: center;
+    padding: 25px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f13a34;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+#feature .fe-box:hover {
+    box-shadow: 10px 10px 54px rgba(70, 62, 223, 0.1);
+}
+
+#feature .fe-box img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#feature .fe-box h6 {
+    display: inline-block;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #050101;
+    background-color: #83f77d;
+}
+
+/* Doi mau tinh nang */
+#feature .fe-box:nth-child(2) h6 {
+    background-color: #83f77d;
+}
+#feature .fe-box:nth-child(3) h6 {
+    background-color: #83f77d;
+}
+#feature .fe-box:nth-child(4) h6 {
+    background-color: #83f77d;
+}
+#feature .fe-box:nth-child(5) h6 {
+    background-color: #83f77d;
+}
+#feature .fe-box:nth-child(6) h6 {
+    background-color: #83f77d;
+}
+
+
+/* Product1 */
+#product1 {
+    text-align: center;
+    
+}
+
+#product1 .pro-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+#product1 .pro {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #acfaa8;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0,0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+}
+#product1 .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+#product1 .pro img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+#product .pro .des {
+    text-align: start;
+    padding: 10px 0;
+}
+
+#product1 .pro .des span {
+    color: #465b52;
+    font-size: 12px;
+}
+#product1 .pro .des h5 {
+    padding-top: 7px;
+    color: #f23f3f;
+    font-size: 14px;
+}
+
+#product1 .pro .des i {
+    font-size: 12px;
+    color: rgb(243, 181, 25);
+}
+
+#product1 .pro .des h4 {
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
+
+#product1 .pro .cart {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #febbdc;
+    color: black;
+    border: 1px solid #088178;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}     
+
+/* Banner Small */
+#banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("img1/anhmauden.jpg");
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+#banner h4 {
+    color: #fff;
+    font-size: 16px;
+}
+
+#banner h2{
+    color: #eb5252;
+    font-size: 30px;
+    padding: 10px 0;
+}
+
+#banner h2 span {
+    color: #acfaa8;
+}
+
+#banner button:hover {
+    background: #088178;
+    color: #acfaa8;
+}
+
+/* Small banner 2 */
+#sm-banner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Khoảng cách giữa các banner */
+    padding: 20px; /* Thêm khoảng cách toàn bộ */
+}
+
+#sm-banner .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: calc(50% - 10px); /* Mỗi banner chiếm 50% chiều rộng, trừ khoảng cách */
+    height: 250px; /* Chiều cao banner cố định */
+    background-size: cover; /* Đảm bảo hình ảnh bao phủ toàn bộ banner */
+    background-position: center; /* Hình ảnh được căn giữa */
+    padding: 20px;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#sm-banner .banner-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#sm-banner .banner-box h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#sm-banner .banner-box h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+#sm-banner .banner-box span {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+#sm-banner .banner-box button {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #088178;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#sm-banner .banner-box button:hover {
+    background-color: #064d49;
+}
+
+#sm-banner .banner-box1:nth-child(1) {
+    background-image: url("img1/xuan.jpg");
+}
+
+#sm-banner .banner-box2:nth-child(2) {
+    background-image: url("img1/ha.jpg");
+}
+
+#sm-banner .banner-box3:nth-child(3) {
+    background-image: url("img1/DONG2.jpg");
+}
+
+#sm-banner .banner-box4:nth-child(4) {
+    background-image: url("img1/dong.jpg");
+}
+#sm-banner .banner-box5:nth-child(5) {
+    background-image: url("img1/dong.jpg");
+}
+/* New letters */
+#newsletter {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url("img1/email.jpg!w700wp");
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: #465b52;
+}
+
+#newsletter h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#newsletter p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #cce7d0;
+}
+
+#newsletter p span {
+    color: #faf99f;
+}
+
+#newsletter .form {
+    display: flex;
+    width: 30%;
+}
+
+#newsletter input {
+    height: 3.125rem;
+    padding: 0 1.25rem;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid transparent ;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#newsletter button {
+    background-color: #088178;
+    color: #fff;
+    white-space: nowrap;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+footer .logo {
+    margin-bottom: 30px;
+
+}
+
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+footer .follow {
+    margin-top: 20px;
+}
+
+footer .follow i {
+    color: #465b52;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+footer ,install .row img {
+    border-radius: 6px;
+    border: 1px solid #61fa8a;
+}
+
+footer .install img {
+    margin: 10px 0 15px 0;
+}
+footer.follow i:hover,
+footer a:hover {
+    color: #088178;
+}
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+}
+
+/* Start Media Query */
+
+@media (max-width: 799px) {
+    .section-p1 {
+        padding: 40px 40px;
+    }
+
+
+     #navabar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0px;
+    right: -300px;
+    height: 100vh;
+    width: 300px;
+    background-color: #e3e6f3;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    padding: 80px 0 0 10px;
+    transition: 0.3s;
+    }
+
+    #navabar.active {
+        right: 0px;
+    }
+
+    #navabar li {
+        margin-bottom: 25px;
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i {
+        color: #1a1a1a;
+        font-size: 24px;
+        padding-left: 20px;
+    }
+
+    #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #222;
+        font-size: 24px;
+    }
+
+    #lg-bag {
+        display: none;
+    }
+
+}
+
+.snowfall {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000; /* Đảm bảo tuyết hiển thị phía trên */
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: #fff;
+    font-size: 10px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
